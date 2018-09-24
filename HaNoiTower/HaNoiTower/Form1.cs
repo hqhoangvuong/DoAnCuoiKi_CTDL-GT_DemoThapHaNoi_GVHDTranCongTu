@@ -68,6 +68,7 @@ namespace HaNoiTower
                 disks[i].Visible = true;
                 disksRodA.Push(disks[i]);
             }
+            timer1.Start();
         }
     }
 }
