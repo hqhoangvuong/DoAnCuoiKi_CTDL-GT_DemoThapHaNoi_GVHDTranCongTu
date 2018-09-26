@@ -77,31 +77,72 @@ namespace HaNoiTower
             timer1.Start();
         }
 
+        public void Movement()
+        {
+            int x = 0, y = 0;
+            PictureBox temp = new PictureBox();
+            Point pnt = new Point(x, y);
+            temp = disksRodA.Pop();
+            pnt = temp.Location;
+            x = pnt.X;
+            y = pnt.Y;
+            Application.DoEvents();
+            Thread.Sleep(1000);
+
+            // Nhấc lên
+            for(; y>50; y--)
+            {
+                temp.Visible = false;
+                temp.Location = new Point(x, y);
+                temp.Visible = true;
+                Application.DoEvents();
+                Thread.Sleep(10);
+            }
+
+            // Qua ngang
+            
+            for(; x<311;x++)
+            {
+                temp.Visible = false;
+                temp.Location = new Point(x, y);
+                temp.Visible = true;
+                Application.DoEvents();
+                Thread.Sleep(10);
+            }
+            //MessageBox.Show("y = " + y);
+
+            // Đặt xuông 
+
+            disksRodA.Peek();
+            int xPeek = 0, yPeek = 0;
+            PictureBox tempPeek = new PictureBox();
+            Point pntPeek = tempPeek.Location;
+            
+            if (pntPeek.Y == 0)
+                yPeek = Def_Y;
+            else
+                yPeek = pntPeek.Y;
+            for (; y <= yPeek; y++)
+            {
+                temp.Visible = false;
+                temp.Location = new Point(x, y);
+                temp.Visible = true;
+                Application.DoEvents();
+                Thread.Sleep(10);
+            }
+
+
+        }
+
+        public void Render (int DepX, int depY, int ArrX, int ArrY)
+        {
+
+        }
+
         private void Start_bnt_Click(object sender, EventArgs e)
         {
-            //Reset
-            //    timer1.Stop();
-            //    foreach (PictureBox disk in disks)
-            //        disk.Visible = false;
-            //    time = new TimeSpan(0);
-            //    Time_Counter.Text = "Thời gian: 00:00:00";
-            //    disksRodA.Clear();
-            //    disksRodB.Clear();
-            //    disksRodC.Clear();
-            //    Disk_Amount.Enabled = false;
-
-            //    int x = RodA.Location.X + DIS_X_frm_Rod_to_Disk;
-            //    int y = Def_Y;
-
-            //    for (int i = (int)Disk_Amount.Value - 1; i >= 0; --i, y-=Disk_Height)
-            //    {
-            //        disks[i].Location = new Point(x, y);
-            //        disks[i].Visible = true;
-            //        disksRodA.Push(disks[i]);
-            //    }
-            //    timer1.Start();
-            //}
             InitalizeDisk();
+            Movement();
         }
     }
 }
