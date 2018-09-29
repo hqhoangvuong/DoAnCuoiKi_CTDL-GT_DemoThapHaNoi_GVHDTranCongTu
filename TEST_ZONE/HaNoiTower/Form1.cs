@@ -134,6 +134,11 @@ namespace HaNoiTower
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         public void Render (int DepX, int depY, int ArrX, int ArrY)
         {
 
