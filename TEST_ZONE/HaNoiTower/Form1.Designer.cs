@@ -86,6 +86,10 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graphics Zone";
+<<<<<<< HEAD
+=======
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+>>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d
             // 
             // picDisk3
             // 

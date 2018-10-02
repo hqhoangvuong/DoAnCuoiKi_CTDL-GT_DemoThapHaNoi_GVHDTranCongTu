@@ -269,6 +269,26 @@
             this.Emegency_Stop.UseVisualStyleBackColor = true;
             this.Emegency_Stop.Click += new System.EventHandler(this.Start_bnt_Click);
             // 
+            // Clear_log
+            // 
+            this.Clear_log.Location = new System.Drawing.Point(18, 150);
+            this.Clear_log.Name = "Clear_log";
+            this.Clear_log.Size = new System.Drawing.Size(129, 31);
+            this.Clear_log.TabIndex = 3;
+            this.Clear_log.Text = "Xóa Log";
+            this.Clear_log.UseVisualStyleBackColor = true;
+            this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
+            // 
+            // Emegency_Stop
+            // 
+            this.Emegency_Stop.Location = new System.Drawing.Point(18, 113);
+            this.Emegency_Stop.Name = "Emegency_Stop";
+            this.Emegency_Stop.Size = new System.Drawing.Size(129, 31);
+            this.Emegency_Stop.TabIndex = 3;
+            this.Emegency_Stop.Text = "Dừng khẩn cấp";
+            this.Emegency_Stop.UseVisualStyleBackColor = true;
+            this.Emegency_Stop.Click += new System.EventHandler(this.Start_bnt_Click);
+            // 
             // Start_bnt
             // 
             this.Start_bnt.Location = new System.Drawing.Point(18, 76);

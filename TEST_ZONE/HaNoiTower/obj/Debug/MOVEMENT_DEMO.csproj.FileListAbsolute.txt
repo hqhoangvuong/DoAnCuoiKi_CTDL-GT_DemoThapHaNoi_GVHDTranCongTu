@@ -8,6 +8,7 @@ C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\MOVEMENT_DEMO.csproj.CoreCompileInputs.cache
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.exe
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.pdb
+<<<<<<< HEAD
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Debug\HaNoiTower.exe.config
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Debug\HaNoiTower.exe
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Debug\HaNoiTower.pdb
@@ -18,3 +19,5 @@ C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCon
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\MOVEMENT_DEMO.csproj.CoreCompileInputs.cache
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.exe
 C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.pdb
+=======
+>>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d
