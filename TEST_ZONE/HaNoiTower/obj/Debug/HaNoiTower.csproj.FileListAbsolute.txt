@@ -1,0 +1,10 @@
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.exe.config
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.exe
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.pdb
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csprojAssemblyReference.cache
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.Form1.resources
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.Properties.Resources.resources
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csproj.GenerateResource.cache
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.exe
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.pdb

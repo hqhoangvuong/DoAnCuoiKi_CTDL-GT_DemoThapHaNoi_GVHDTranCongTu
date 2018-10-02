@@ -40,6 +40,21 @@ namespace HaNoiTower
 
         }
 
+        private void Event_log_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RodA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.Add(new TimeSpan(0, 0, 1));

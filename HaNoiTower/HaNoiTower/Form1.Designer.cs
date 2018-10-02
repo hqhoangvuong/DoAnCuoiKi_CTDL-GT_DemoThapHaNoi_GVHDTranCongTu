@@ -44,12 +44,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Event_log = new System.Windows.Forms.RichTextBox();
+            this.Clear_log = new System.Windows.Forms.Button();
+            this.Emegency_Stop = new System.Windows.Forms.Button();
             this.Start_bnt = new System.Windows.Forms.Button();
             this.Time_Counter = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
-            this.Emegency_Stop = new System.Windows.Forms.Button();
-            this.Clear_log = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -86,6 +86,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graphics Zone";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // picDisk3
             // 
@@ -162,7 +163,7 @@
             // picDisk2
             // 
             this.picDisk2.Image = global::HaNoiTower.Properties.Resources.Disk_2;
-            this.picDisk2.Location = new System.Drawing.Point(311, 302);
+            this.picDisk2.Location = new System.Drawing.Point(312, 302);
             this.picDisk2.Name = "picDisk2";
             this.picDisk2.Size = new System.Drawing.Size(214, 20);
             this.picDisk2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -195,6 +196,7 @@
             // 
             // RodB
             // 
+            this.RodB.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.RodB.Image = global::HaNoiTower.Properties.Resources.Rod_01;
             this.RodB.Location = new System.Drawing.Point(300, 95);
             this.RodB.Name = "RodB";
@@ -213,6 +215,7 @@
             this.RodA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.RodA.TabIndex = 0;
             this.RodA.TabStop = false;
+            this.RodA.Click += new System.EventHandler(this.RodA_Click);
             // 
             // timer1
             // 
@@ -237,11 +240,34 @@
             // 
             // Event_log
             // 
+            this.Event_log.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Event_log.Location = new System.Drawing.Point(170, 27);
             this.Event_log.Name = "Event_log";
-            this.Event_log.Size = new System.Drawing.Size(655, 154);
+            this.Event_log.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Event_log.Size = new System.Drawing.Size(655, 149);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
+            this.Event_log.TextChanged += new System.EventHandler(this.Event_log_TextChanged);
+            // 
+            // Clear_log
+            // 
+            this.Clear_log.Location = new System.Drawing.Point(18, 150);
+            this.Clear_log.Name = "Clear_log";
+            this.Clear_log.Size = new System.Drawing.Size(129, 31);
+            this.Clear_log.TabIndex = 3;
+            this.Clear_log.Text = "Xóa Log";
+            this.Clear_log.UseVisualStyleBackColor = true;
+            this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
+            // 
+            // Emegency_Stop
+            // 
+            this.Emegency_Stop.Location = new System.Drawing.Point(18, 113);
+            this.Emegency_Stop.Name = "Emegency_Stop";
+            this.Emegency_Stop.Size = new System.Drawing.Size(129, 31);
+            this.Emegency_Stop.TabIndex = 3;
+            this.Emegency_Stop.Text = "Dừng khẩn cấp";
+            this.Emegency_Stop.UseVisualStyleBackColor = true;
+            this.Emegency_Stop.Click += new System.EventHandler(this.Start_bnt_Click);
             // 
             // Start_bnt
             // 
@@ -287,6 +313,7 @@
             this.Disk_Amount.Name = "Disk_Amount";
             this.Disk_Amount.Size = new System.Drawing.Size(38, 26);
             this.Disk_Amount.TabIndex = 0;
+            this.Disk_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Disk_Amount.Value = new decimal(new int[] {
             3,
             0,
@@ -294,37 +321,17 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
-            // Emegency_Stop
-            // 
-            this.Emegency_Stop.Location = new System.Drawing.Point(18, 113);
-            this.Emegency_Stop.Name = "Emegency_Stop";
-            this.Emegency_Stop.Size = new System.Drawing.Size(129, 31);
-            this.Emegency_Stop.TabIndex = 3;
-            this.Emegency_Stop.Text = "Dừng khẩn cấp";
-            this.Emegency_Stop.UseVisualStyleBackColor = true;
-            this.Emegency_Stop.Click += new System.EventHandler(this.Start_bnt_Click);
-            // 
-            // Clear_log
-            // 
-            this.Clear_log.Location = new System.Drawing.Point(18, 150);
-            this.Clear_log.Name = "Clear_log";
-            this.Clear_log.Size = new System.Drawing.Size(129, 31);
-            this.Clear_log.TabIndex = 3;
-            this.Clear_log.Text = "Xóa Log";
-            this.Clear_log.UseVisualStyleBackColor = true;
-            this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 585);
+            this.ClientSize = new System.Drawing.Size(862, 570);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Tháp Hà Nội";
             this.groupBox1.ResumeLayout(false);
