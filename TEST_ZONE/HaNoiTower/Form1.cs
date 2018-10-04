@@ -18,6 +18,9 @@ namespace HaNoiTower
         PictureBox[] disks;
         Stack<PictureBox> disksRodA, disksRodB, disksRodC;
         const int Def_Y = 302;
+        const int RodA_X = 29;
+        const int RodB_X = 311;
+        const int RodC_X = 600;
         const int Disk_Height = 20;
         const int DIS_X_frm_Rod_to_Disk = 11;
 
@@ -45,6 +48,133 @@ namespace HaNoiTower
         {
             time = time.Add(new TimeSpan(0, 0, 1));
             Time_Counter.Text = string.Format("Thời gian: {0:00}:{1:00}:{2:00}", time.Hours, time.Minutes, time.Seconds);
+        }
+
+        public struct ThuTuc
+        {
+            public int N;
+            public char A;
+            public char B;
+            public char C;
+        };
+
+        public void Movement(Stack<PictureBox> rodSrc, Stack<PictureBox> rodDes)
+        {
+            int x = 0, y = 0;
+            PictureBox DiskPop = new PictureBox();
+            Point pntScr = new Point(x, y);
+
+            DiskPop = rodSrc.Pop();
+            pntScr = DiskPop.Location;
+            x = pntScr.X;
+            y = pntScr.Y;
+            Application.DoEvents();
+
+            // Nhấc lên
+            for (; y > 50; y--)
+            {
+                DiskPop.Visible = false;
+                DiskPop.Location = new Point(x, y);
+                DiskPop.Visible = true;
+                Application.DoEvents();
+                Thread.Sleep(1);
+            }
+
+            int xPeek = 0, yPeek = 0;
+            PictureBox tempPeek = new PictureBox();
+            if (rodDes.Count != 0)
+            {
+                tempPeek = rodDes.Peek();
+                xPeek = tempPeek.Location.X;
+                yPeek = tempPeek.Location.Y - 20;
+            }
+            else
+            {
+                yPeek = Def_Y;
+                if (rodDes == disksRodA)
+                    xPeek = RodA_X;
+                else
+                    if (rodDes == disksRodB)
+                    xPeek = RodB_X;
+                else
+                    xPeek = RodC_X;
+            }
+
+            //MessageBox.Show("x=" + x + ", xPeek=" + xPeek);
+            if (xPeek > x)
+                for (; x <= xPeek; x++)
+                {
+                    DiskPop.Visible = false;
+                    DiskPop.Location = new Point(x, y);
+                    DiskPop.Visible = true;
+                    Application.DoEvents();
+                    Thread.Sleep(1);
+                }
+            else
+                for (; x >= xPeek; x--)
+                {
+                    DiskPop.Visible = false;
+                    DiskPop.Location = new Point(x, y);
+                    DiskPop.Visible = true;
+                    Application.DoEvents();
+                    Thread.Sleep(1);
+                }
+
+            // Qua ngang
+
+
+            //MessageBox.Show("y = " + y);
+
+            // Đặt xuông
+            for (; y <= yPeek; y++)
+            {
+                DiskPop.Visible = false;
+                DiskPop.Location = new Point(x, y);
+                DiskPop.Visible = true;
+                Application.DoEvents();
+                Thread.Sleep(1);
+            }
+            //MessageBox.Show("x=" + DiskPop.Location.X + ", y=" + DiskPop.Location.Y);
+            rodDes.Push(DiskPop);
+        }
+
+        static void HaNoiTowerByStack()
+        {
+            ThuTuc X = new ThuTuc();
+            X.N = int.Parse(Console.ReadLine());
+            X.A = 'A';
+            X.B = 'B';
+            X.C = 'C';
+
+            Stack<ThuTuc> myStack = new Stack<ThuTuc>();
+            ThuTuc temp = new ThuTuc();
+            ThuTuc temp1 = new ThuTuc();
+            myStack.Push(X);
+            do
+            {
+                temp = myStack.Pop();
+                if (temp.N == 1) ;
+                //Console.WriteLine("{0} {1}", temp.A, temp.B);
+                else
+                {
+                    temp1.N = temp.N - 1;
+                    temp1.A = temp.C;
+                    temp1.B = temp.B;
+                    temp1.C = temp.A;
+                    myStack.Push(temp1);
+                    temp1.N = 1;
+                    temp1.A = temp.A;
+                    temp1.B = temp.B;
+                    temp1.C = temp.C;
+                    myStack.Push(temp1);
+                    temp1.N = temp.N - 1;
+                    temp1.A = temp.A;
+                    temp1.B = temp.C;
+                    temp1.C = temp.B;
+                    myStack.Push(temp1);
+                }
+            } while (myStack.Count != 0);
+            Console.ReadKey();
         }
 
         public void InitalizeDisk()
@@ -77,62 +207,6 @@ namespace HaNoiTower
             timer1.Start();
         }
 
-        public void Movement()
-        {
-            int x = 0, y = 0;
-            PictureBox temp = new PictureBox();
-            Point pnt = new Point(x, y);
-            temp = disksRodA.Pop();
-            pnt = temp.Location;
-            x = pnt.X;
-            y = pnt.Y;
-            Application.DoEvents();
-            Thread.Sleep(1000);
-
-            // Nhấc lên
-            for(; y>50; y--)
-            {
-                temp.Visible = false;
-                temp.Location = new Point(x, y);
-                temp.Visible = true;
-                Application.DoEvents();
-                Thread.Sleep(10);
-            }
-
-            // Qua ngang
-            
-            for(; x<311;x++)
-            {
-                temp.Visible = false;
-                temp.Location = new Point(x, y);
-                temp.Visible = true;
-                Application.DoEvents();
-                Thread.Sleep(10);
-            }
-            //MessageBox.Show("y = " + y);
-
-            // Đặt xuông 
-
-            disksRodA.Peek();
-            int xPeek = 0, yPeek = 0;
-            PictureBox tempPeek = new PictureBox();
-            Point pntPeek = tempPeek.Location;
-            
-            if (pntPeek.Y == 0)
-                yPeek = Def_Y;
-            else
-                yPeek = pntPeek.Y;
-            for (; y <= yPeek; y++)
-            {
-                temp.Visible = false;
-                temp.Location = new Point(x, y);
-                temp.Visible = true;
-                Application.DoEvents();
-                Thread.Sleep(10);
-            }
-
-
-        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -147,7 +221,13 @@ namespace HaNoiTower
         private void Start_bnt_Click(object sender, EventArgs e)
         {
             InitalizeDisk();
-            Movement();
+            Movement(disksRodA, disksRodB);
+            Movement(disksRodA, disksRodC);
+            Movement(disksRodB, disksRodC);
+            Movement(disksRodA, disksRodB);
+            Movement(disksRodC, disksRodA);
+            Movement(disksRodC, disksRodB);
+            Movement(disksRodA, disksRodB);
         }
     }
 }
