@@ -208,11 +208,14 @@ namespace HaNoiTower
         }
 
 
+<<<<<<< HEAD
+=======
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
+>>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d
         public void Render (int DepX, int depY, int ArrX, int ArrY)
         {
 

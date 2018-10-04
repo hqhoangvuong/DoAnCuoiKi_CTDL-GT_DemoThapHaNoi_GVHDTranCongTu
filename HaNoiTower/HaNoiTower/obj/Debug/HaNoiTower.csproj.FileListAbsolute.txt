@@ -8,3 +8,13 @@ C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csproj.CoreCompileInputs.cache
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.exe
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.pdb
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.exe.config
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.exe
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\bin\Debug\HaNoiTower.pdb
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csprojAssemblyReference.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.Form1.resources
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.Properties.Resources.resources
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csproj.GenerateResource.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.csproj.CoreCompileInputs.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.exe
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\HaNoiTower\HaNoiTower\obj\Debug\HaNoiTower.pdb
