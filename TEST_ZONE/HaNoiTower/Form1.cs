@@ -207,15 +207,16 @@ namespace HaNoiTower
             timer1.Start();
         }
 
-
-<<<<<<< HEAD
-=======
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
->>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public void Render (int DepX, int depY, int ArrX, int ArrY)
         {
 

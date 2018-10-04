@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
-
-namespace STACK_DEMO
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
-}
-=======
 using System.Collections;
+
+//namespace STACK_DEMO
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//        }
+//    }
+//}
+
 
 namespace STACK_DEMO
 {
@@ -69,5 +68,3 @@ namespace STACK_DEMO
         }
     }
 }
-
->>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d

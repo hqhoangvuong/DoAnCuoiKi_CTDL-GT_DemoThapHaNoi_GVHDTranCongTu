@@ -33,6 +33,7 @@
             this.picDisk3 = new System.Windows.Forms.PictureBox();
             this.picDisk4 = new System.Windows.Forms.PictureBox();
             this.picDisk5 = new System.Windows.Forms.PictureBox();
+            this.Time_Counter = new System.Windows.Forms.Label();
             this.picDisk6 = new System.Windows.Forms.PictureBox();
             this.picDisk7 = new System.Windows.Forms.PictureBox();
             this.picDisk8 = new System.Windows.Forms.PictureBox();
@@ -43,13 +44,13 @@
             this.RodA = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Event_log = new System.Windows.Forms.RichTextBox();
             this.Clear_log = new System.Windows.Forms.Button();
-            this.Emegency_Stop = new System.Windows.Forms.Button();
             this.Start_bnt = new System.Windows.Forms.Button();
-            this.Time_Counter = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
+            this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -64,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,6 +73,7 @@
             this.groupBox1.Controls.Add(this.picDisk3);
             this.groupBox1.Controls.Add(this.picDisk4);
             this.groupBox1.Controls.Add(this.picDisk5);
+            this.groupBox1.Controls.Add(this.Time_Counter);
             this.groupBox1.Controls.Add(this.picDisk6);
             this.groupBox1.Controls.Add(this.picDisk7);
             this.groupBox1.Controls.Add(this.picDisk8);
@@ -86,10 +89,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graphics Zone";
-<<<<<<< HEAD
-=======
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
->>>>>>> bfadc61a749a834bdfe48d935d7ce9539d51511d
             // 
             // picDisk3
             // 
@@ -126,6 +126,15 @@
             this.picDisk5.TabStop = false;
             this.picDisk5.Tag = "5";
             this.picDisk5.Visible = false;
+            // 
+            // Time_Counter
+            // 
+            this.Time_Counter.AutoSize = true;
+            this.Time_Counter.Location = new System.Drawing.Point(14, 42);
+            this.Time_Counter.Name = "Time_Counter";
+            this.Time_Counter.Size = new System.Drawing.Size(139, 19);
+            this.Time_Counter.TabIndex = 2;
+            this.Time_Counter.Text = "Thời gian: 00:00:00";
             // 
             // picDisk6
             // 
@@ -224,11 +233,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.SimuatorSpeed);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.Event_log);
             this.groupBox2.Controls.Add(this.Clear_log);
-            this.groupBox2.Controls.Add(this.Emegency_Stop);
             this.groupBox2.Controls.Add(this.Start_bnt);
-            this.groupBox2.Controls.Add(this.Time_Counter);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.Disk_Amount);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,52 +248,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 19);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tốc độ mô phỏng";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Event_log
             // 
-            this.Event_log.Location = new System.Drawing.Point(170, 27);
+            this.Event_log.Location = new System.Drawing.Point(358, 27);
             this.Event_log.Name = "Event_log";
-            this.Event_log.Size = new System.Drawing.Size(655, 154);
+            this.Event_log.Size = new System.Drawing.Size(467, 154);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
             // 
             // Clear_log
             // 
-            this.Clear_log.Location = new System.Drawing.Point(18, 150);
+            this.Clear_log.Location = new System.Drawing.Point(18, 125);
             this.Clear_log.Name = "Clear_log";
-            this.Clear_log.Size = new System.Drawing.Size(129, 31);
+            this.Clear_log.Size = new System.Drawing.Size(173, 31);
             this.Clear_log.TabIndex = 3;
             this.Clear_log.Text = "Xóa Log";
             this.Clear_log.UseVisualStyleBackColor = true;
             this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
             // 
-            // Emegency_Stop
-            // 
-            this.Emegency_Stop.Location = new System.Drawing.Point(18, 113);
-            this.Emegency_Stop.Name = "Emegency_Stop";
-            this.Emegency_Stop.Size = new System.Drawing.Size(129, 31);
-            this.Emegency_Stop.TabIndex = 3;
-            this.Emegency_Stop.Text = "Dừng khẩn cấp";
-            this.Emegency_Stop.UseVisualStyleBackColor = true;
-            this.Emegency_Stop.Click += new System.EventHandler(this.Start_bnt_Click);
-            // 
             // Start_bnt
             // 
-            this.Start_bnt.Location = new System.Drawing.Point(18, 76);
+            this.Start_bnt.Location = new System.Drawing.Point(18, 88);
             this.Start_bnt.Name = "Start_bnt";
-            this.Start_bnt.Size = new System.Drawing.Size(129, 31);
+            this.Start_bnt.Size = new System.Drawing.Size(173, 31);
             this.Start_bnt.TabIndex = 3;
             this.Start_bnt.Text = "Bắt đầu Demo";
             this.Start_bnt.UseVisualStyleBackColor = true;
             this.Start_bnt.Click += new System.EventHandler(this.Start_bnt_Click);
-            // 
-            // Time_Counter
-            // 
-            this.Time_Counter.AutoSize = true;
-            this.Time_Counter.Location = new System.Drawing.Point(14, 54);
-            this.Time_Counter.Name = "Time_Counter";
-            this.Time_Counter.Size = new System.Drawing.Size(139, 19);
-            this.Time_Counter.TabIndex = 2;
-            this.Time_Counter.Text = "Thời gian: 00:00:00";
             // 
             // label1
             // 
@@ -297,7 +297,7 @@
             // 
             // Disk_Amount
             // 
-            this.Disk_Amount.Location = new System.Drawing.Point(109, 25);
+            this.Disk_Amount.Location = new System.Drawing.Point(153, 25);
             this.Disk_Amount.Maximum = new decimal(new int[] {
             8,
             0,
@@ -318,6 +318,13 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
+            // SimuatorSpeed
+            // 
+            this.SimuatorSpeed.Location = new System.Drawing.Point(153, 56);
+            this.SimuatorSpeed.Name = "SimuatorSpeed";
+            this.SimuatorSpeed.Size = new System.Drawing.Size(38, 26);
+            this.SimuatorSpeed.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +339,7 @@
             this.Name = "Form1";
             this.Text = "Tháp Hà Nội";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk5)).EndInit();
@@ -346,6 +354,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,8 +380,9 @@
         private System.Windows.Forms.NumericUpDown Disk_Amount;
         private System.Windows.Forms.RichTextBox Event_log;
         private System.Windows.Forms.Button Start_bnt;
-        private System.Windows.Forms.Button Emegency_Stop;
         private System.Windows.Forms.Button Clear_log;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown SimuatorSpeed;
     }
 }
 
