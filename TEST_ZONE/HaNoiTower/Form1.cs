@@ -53,7 +53,7 @@ namespace HaNoiTower
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.Add(new TimeSpan(0, 0, 1));
-            Time_Counter.Text = string.Format("Thời gian: {0:00}:{1:00}:{2:00}", time.Hours, time.Minutes, time.Seconds);
+            Time_Counter.Text = string.Format("Time: {0:00}:{1:00}:{2:00}", time.Hours, time.Minutes, time.Seconds);
         }
 
         public void SpeedSelect(ref int delayTime)
@@ -204,7 +204,7 @@ namespace HaNoiTower
             } while (myStack.Count != 0);
             Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. ");
             timer1.Stop();
-            MessageBox.Show("Mô phỏng hoàn tất !!!!!");
+            MessageBox.Show("Task Completed !!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Start_bnt.Enabled = true;
             Disk_Amount.Enabled = true;
             SimuatorSpeed.Enabled = true;
@@ -217,7 +217,7 @@ namespace HaNoiTower
             foreach (PictureBox disk in disks)
                 disk.Visible = false;
             time = new TimeSpan(0);
-            Time_Counter.Text = "Thời gian: 00:00:00";
+            Time_Counter.Text = "Time: 00:00:00";
             disksRodA.Clear();
             disksRodB.Clear();
             disksRodC.Clear();
@@ -254,19 +254,21 @@ namespace HaNoiTower
         private void button1_Click(object sender, EventArgs e)
         {
             Event_log.Clear();
-
+            MessageBox.Show("Event Log Textbox Cleaned.", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+ 
 
         private void Export_log_Click(object sender, EventArgs e)
         {
             string path;
             SaveFileDialog save = new SaveFileDialog();
-            saveFileDialog1.Filter = "Text file (*.txt)|*.huf|All files (*.*)|*.*";
+            saveFileDialog1.Filter = "Text file (*.txt)|*.txt|All files (*.*)|*.*";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.Title = "Save";
             saveFileDialog1.ShowDialog();
             path = (string)saveFileDialog1.FileName;
             Event_log.SaveFile(path, RichTextBoxStreamType.RichText);
+            MessageBox.Show("Log file saved at " + path + " .", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Render (int DepX, int depY, int ArrX, int ArrY)
