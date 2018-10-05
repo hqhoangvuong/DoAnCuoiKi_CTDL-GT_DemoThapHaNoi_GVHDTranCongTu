@@ -4,4 +4,3 @@ C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Debug\STACK_DEMO.csproj.CoreCompileInputs.cache
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Debug\STACK_DEMO.exe
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Debug\STACK_DEMO.pdb
-C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Debug\STACK_DEMO.csprojAssemblyReference.cache

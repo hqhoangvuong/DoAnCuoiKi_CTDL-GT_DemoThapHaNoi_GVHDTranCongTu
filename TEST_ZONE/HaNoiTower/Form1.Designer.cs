@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.picDisk3 = new System.Windows.Forms.PictureBox();
             this.picDisk4 = new System.Windows.Forms.PictureBox();
@@ -44,13 +45,16 @@
             this.RodA = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Event_log = new System.Windows.Forms.RichTextBox();
             this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.Event_log = new System.Windows.Forms.RichTextBox();
-            this.Clear_log = new System.Windows.Forms.Button();
             this.Start_bnt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
+            this.Wipe_Log = new System.Windows.Forms.Button();
+            this.Export_log = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -64,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
             this.SuspendLayout();
@@ -233,26 +238,46 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Export_log);
+            this.groupBox2.Controls.Add(this.Wipe_Log);
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.SimuatorSpeed);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Event_log);
-            this.groupBox2.Controls.Add(this.Clear_log);
             this.groupBox2.Controls.Add(this.Start_bnt);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.Disk_Amount);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 382);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(841, 191);
+            this.groupBox2.Size = new System.Drawing.Size(841, 212);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Event_log);
+            this.groupBox3.Location = new System.Drawing.Point(251, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(584, 190);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Log";
+            // 
+            // Event_log
+            // 
+            this.Event_log.Location = new System.Drawing.Point(6, 25);
+            this.Event_log.Name = "Event_log";
+            this.Event_log.ReadOnly = true;
+            this.Event_log.Size = new System.Drawing.Size(568, 154);
+            this.Event_log.TabIndex = 4;
+            this.Event_log.Text = "";
             // 
             // SimuatorSpeed
             // 
             this.SimuatorSpeed.Location = new System.Drawing.Point(153, 56);
             this.SimuatorSpeed.Maximum = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
@@ -280,29 +305,13 @@
             this.label2.Text = "Tốc độ mô phỏng";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Event_log
-            // 
-            this.Event_log.Location = new System.Drawing.Point(257, 27);
-            this.Event_log.Name = "Event_log";
-            this.Event_log.Size = new System.Drawing.Size(568, 154);
-            this.Event_log.TabIndex = 4;
-            this.Event_log.Text = "";
-            // 
-            // Clear_log
-            // 
-            this.Clear_log.Location = new System.Drawing.Point(18, 125);
-            this.Clear_log.Name = "Clear_log";
-            this.Clear_log.Size = new System.Drawing.Size(173, 31);
-            this.Clear_log.TabIndex = 3;
-            this.Clear_log.Text = "Xóa Log";
-            this.Clear_log.UseVisualStyleBackColor = true;
-            this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
-            // 
             // Start_bnt
             // 
+            this.Start_bnt.Image = ((System.Drawing.Image)(resources.GetObject("Start_bnt.Image")));
+            this.Start_bnt.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Start_bnt.Location = new System.Drawing.Point(18, 88);
             this.Start_bnt.Name = "Start_bnt";
-            this.Start_bnt.Size = new System.Drawing.Size(173, 31);
+            this.Start_bnt.Size = new System.Drawing.Size(173, 32);
             this.Start_bnt.TabIndex = 3;
             this.Start_bnt.Text = "Bắt đầu Demo";
             this.Start_bnt.UseVisualStyleBackColor = true;
@@ -340,12 +349,32 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
+            // Wipe_Log
+            // 
+            this.Wipe_Log.Location = new System.Drawing.Point(18, 127);
+            this.Wipe_Log.Name = "Wipe_Log";
+            this.Wipe_Log.Size = new System.Drawing.Size(173, 32);
+            this.Wipe_Log.TabIndex = 8;
+            this.Wipe_Log.Text = "Xóa Log";
+            this.Wipe_Log.UseVisualStyleBackColor = true;
+            this.Wipe_Log.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Export_log
+            // 
+            this.Export_log.Location = new System.Drawing.Point(18, 166);
+            this.Export_log.Name = "Export_log";
+            this.Export_log.Size = new System.Drawing.Size(173, 32);
+            this.Export_log.TabIndex = 9;
+            this.Export_log.Text = "Xuất Log ";
+            this.Export_log.UseVisualStyleBackColor = true;
+            this.Export_log.Click += new System.EventHandler(this.Export_log_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 585);
+            this.ClientSize = new System.Drawing.Size(867, 599);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
@@ -368,6 +397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
             this.ResumeLayout(false);
@@ -395,9 +425,12 @@
         private System.Windows.Forms.NumericUpDown Disk_Amount;
         private System.Windows.Forms.RichTextBox Event_log;
         private System.Windows.Forms.Button Start_bnt;
-        private System.Windows.Forms.Button Clear_log;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown SimuatorSpeed;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Wipe_Log;
+        private System.Windows.Forms.Button Export_log;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
