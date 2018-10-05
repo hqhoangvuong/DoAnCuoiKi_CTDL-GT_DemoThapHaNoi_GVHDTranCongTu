@@ -15,4 +15,4 @@ Huỳnh Quốc Hoàng Vương      17110256
 
 Bùi Thị Hồng Nhung          17110201
 
-Bản quyền được bảo hộ bởi giấy phép GNU GENERAL PUBLIC LICENSE 
+Bản quyền được bảo hộ bởi giấy phép GPL-3.0, ngày 29-5-2007
