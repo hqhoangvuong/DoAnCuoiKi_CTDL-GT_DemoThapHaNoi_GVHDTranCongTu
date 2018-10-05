@@ -53,9 +53,9 @@ namespace HaNoiTower
         public struct ThuTuc
         {
             public int N;
-            public char A;
-            public char B;
-            public char C;
+            public Stack<PictureBox> A;
+            public Stack<PictureBox> B;
+            public Stack<PictureBox> C;
         };
 
         public void Movement(Stack<PictureBox> rodSrc, Stack<PictureBox> rodDes)
@@ -138,13 +138,14 @@ namespace HaNoiTower
             rodDes.Push(DiskPop);
         }
 
-        static void HaNoiTowerByStack()
+        public void HaNoiTowerByStack(int x)
         {
+            
             ThuTuc X = new ThuTuc();
-            X.N = int.Parse(Console.ReadLine());
-            X.A = 'A';
-            X.B = 'B';
-            X.C = 'C';
+            X.N = x;
+            X.A = disksRodA;
+            X.B = disksRodB;
+            X.C = disksRodC;
 
             Stack<ThuTuc> myStack = new Stack<ThuTuc>();
             ThuTuc temp = new ThuTuc();
@@ -153,8 +154,9 @@ namespace HaNoiTower
             do
             {
                 temp = myStack.Pop();
-                if (temp.N == 1) ;
-                //Console.WriteLine("{0} {1}", temp.A, temp.B);
+                if (temp.N == 1)
+                    //Console.WriteLine("{0} {1}", temp.A, temp.B);
+                    Movement(temp.A, temp.B);
                 else
                 {
                     temp1.N = temp.N - 1;
@@ -174,7 +176,6 @@ namespace HaNoiTower
                     myStack.Push(temp1);
                 }
             } while (myStack.Count != 0);
-            Console.ReadKey();
         }
 
         public void InitalizeDisk()
@@ -225,13 +226,14 @@ namespace HaNoiTower
         private void Start_bnt_Click(object sender, EventArgs e)
         {
             InitalizeDisk();
-            Movement(disksRodA, disksRodB);
-            Movement(disksRodA, disksRodC);
-            Movement(disksRodB, disksRodC);
-            Movement(disksRodA, disksRodB);
-            Movement(disksRodC, disksRodA);
-            Movement(disksRodC, disksRodB);
-            Movement(disksRodA, disksRodB);
+            //Movement(disksRodA, disksRodB);
+            //Movement(disksRodA, disksRodC);
+            //Movement(disksRodB, disksRodC);
+            //Movement(disksRodA, disksRodB);
+            //Movement(disksRodC, disksRodA);
+            //Movement(disksRodC, disksRodB);
+            //Movement(disksRodA, disksRodB);
+            HaNoiTowerByStack((int)Disk_Amount.Value);
         }
     }
 }

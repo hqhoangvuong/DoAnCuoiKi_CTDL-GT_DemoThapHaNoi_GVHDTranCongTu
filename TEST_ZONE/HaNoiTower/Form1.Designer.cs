@@ -44,13 +44,13 @@
             this.RodA = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.Event_log = new System.Windows.Forms.RichTextBox();
             this.Clear_log = new System.Windows.Forms.Button();
             this.Start_bnt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
-            this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -64,8 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -130,7 +130,7 @@
             // Time_Counter
             // 
             this.Time_Counter.AutoSize = true;
-            this.Time_Counter.Location = new System.Drawing.Point(14, 42);
+            this.Time_Counter.Location = new System.Drawing.Point(6, 22);
             this.Time_Counter.Name = "Time_Counter";
             this.Time_Counter.Size = new System.Drawing.Size(139, 19);
             this.Time_Counter.TabIndex = 2;
@@ -248,6 +248,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
             // 
+            // SimuatorSpeed
+            // 
+            this.SimuatorSpeed.Location = new System.Drawing.Point(153, 56);
+            this.SimuatorSpeed.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.SimuatorSpeed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SimuatorSpeed.Name = "SimuatorSpeed";
+            this.SimuatorSpeed.Size = new System.Drawing.Size(38, 26);
+            this.SimuatorSpeed.TabIndex = 6;
+            this.SimuatorSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -260,9 +282,9 @@
             // 
             // Event_log
             // 
-            this.Event_log.Location = new System.Drawing.Point(358, 27);
+            this.Event_log.Location = new System.Drawing.Point(257, 27);
             this.Event_log.Name = "Event_log";
-            this.Event_log.Size = new System.Drawing.Size(467, 154);
+            this.Event_log.Size = new System.Drawing.Size(568, 154);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
             // 
@@ -318,13 +340,6 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
-            // SimuatorSpeed
-            // 
-            this.SimuatorSpeed.Location = new System.Drawing.Point(153, 56);
-            this.SimuatorSpeed.Name = "SimuatorSpeed";
-            this.SimuatorSpeed.Size = new System.Drawing.Size(38, 26);
-            this.SimuatorSpeed.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,8 +368,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
             this.ResumeLayout(false);
 
         }
