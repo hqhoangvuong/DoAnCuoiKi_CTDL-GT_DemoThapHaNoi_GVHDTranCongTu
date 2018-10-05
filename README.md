@@ -14,3 +14,5 @@ Nhóm sinh viên thực hiện: Nhóm 11
 Huỳnh Quốc Hoàng Vương      17110256
 
 Bùi Thị Hồng Nhung          17110201
+
+Bản quyền được bảo hộ bởi giấy phép GNU GENERAL PUBLIC LICENSE 
