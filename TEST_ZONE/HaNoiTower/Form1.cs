@@ -276,6 +276,20 @@ namespace HaNoiTower
             MessageBox.Show("Log file saved at " + path + " .", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void About_Project_Click(object sender, EventArgs e)
+        {
+            var ShowFrm = new AboutForm();
+            ShowFrm.Show();
+        }
+
+        private void Exit_Program_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure To Exit Programme ?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
         public void Render (int DepX, int depY, int ArrX, int ArrY)
         {
 

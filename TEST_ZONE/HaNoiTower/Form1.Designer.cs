@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stepCounter = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.picDisk3 = new System.Windows.Forms.PictureBox();
             this.picDisk4 = new System.Windows.Forms.PictureBox();
             this.picDisk5 = new System.Windows.Forms.PictureBox();
@@ -55,10 +59,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.stepCounter = new System.Windows.Forms.Label();
+            this.Stop_Solve = new System.Windows.Forms.Button();
+            this.About_Project = new System.Windows.Forms.Button();
+            this.Exit_Program = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -104,6 +107,43 @@
             this.groupBox1.Text = "Graphics Zone";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // stepCounter
+            // 
+            this.stepCounter.AutoSize = true;
+            this.stepCounter.ForeColor = System.Drawing.SystemColors.Info;
+            this.stepCounter.Location = new System.Drawing.Point(753, 22);
+            this.stepCounter.Name = "stepCounter";
+            this.stepCounter.Size = new System.Drawing.Size(56, 19);
+            this.stepCounter.TabIndex = 4;
+            this.stepCounter.Text = "Step: 0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(681, 344);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 19);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Rod C";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(392, 344);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Rod B";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(111, 344);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Rod A";
+            // 
             // picDisk3
             // 
             this.picDisk3.Image = global::HaNoiTower.Properties.Resources.Disk_3;
@@ -143,6 +183,7 @@
             // Time_Counter
             // 
             this.Time_Counter.AutoSize = true;
+            this.Time_Counter.ForeColor = System.Drawing.SystemColors.Info;
             this.Time_Counter.Location = new System.Drawing.Point(6, 22);
             this.Time_Counter.Name = "Time_Counter";
             this.Time_Counter.Size = new System.Drawing.Size(110, 19);
@@ -246,8 +287,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Export_log);
-            this.groupBox2.Controls.Add(this.Wipe_Log);
+            this.groupBox2.Controls.Add(this.Exit_Program);
+            this.groupBox2.Controls.Add(this.About_Project);
+            this.groupBox2.Controls.Add(this.Stop_Solve);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.SimuatorSpeed);
             this.groupBox2.Controls.Add(this.label2);
@@ -257,7 +299,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 395);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(841, 212);
+            this.groupBox2.Size = new System.Drawing.Size(843, 248);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
@@ -266,7 +308,7 @@
             // 
             this.Export_log.Image = ((System.Drawing.Image)(resources.GetObject("Export_log.Image")));
             this.Export_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Export_log.Location = new System.Drawing.Point(18, 166);
+            this.Export_log.Location = new System.Drawing.Point(338, 185);
             this.Export_log.Name = "Export_log";
             this.Export_log.Size = new System.Drawing.Size(205, 32);
             this.Export_log.TabIndex = 9;
@@ -278,7 +320,7 @@
             // 
             this.Wipe_Log.Image = ((System.Drawing.Image)(resources.GetObject("Wipe_Log.Image")));
             this.Wipe_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Wipe_Log.Location = new System.Drawing.Point(18, 127);
+            this.Wipe_Log.Location = new System.Drawing.Point(45, 185);
             this.Wipe_Log.Name = "Wipe_Log";
             this.Wipe_Log.Size = new System.Drawing.Size(205, 32);
             this.Wipe_Log.TabIndex = 8;
@@ -288,10 +330,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Export_log);
             this.groupBox3.Controls.Add(this.Event_log);
+            this.groupBox3.Controls.Add(this.Wipe_Log);
             this.groupBox3.Location = new System.Drawing.Point(251, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(584, 190);
+            this.groupBox3.Size = new System.Drawing.Size(584, 226);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Log";
@@ -301,7 +345,7 @@
             this.Event_log.Location = new System.Drawing.Point(6, 25);
             this.Event_log.Name = "Event_log";
             this.Event_log.ReadOnly = true;
-            this.Event_log.Size = new System.Drawing.Size(568, 154);
+            this.Event_log.Size = new System.Drawing.Size(572, 154);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
             // 
@@ -340,7 +384,7 @@
             // Start_bnt
             // 
             this.Start_bnt.Image = ((System.Drawing.Image)(resources.GetObject("Start_bnt.Image")));
-            this.Start_bnt.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.Start_bnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Start_bnt.Location = new System.Drawing.Point(18, 88);
             this.Start_bnt.Name = "Start_bnt";
             this.Start_bnt.Size = new System.Drawing.Size(205, 32);
@@ -381,55 +425,55 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
-            // label3
+            // Stop_Solve
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 344);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Rod A";
+            this.Stop_Solve.Image = ((System.Drawing.Image)(resources.GetObject("Stop_Solve.Image")));
+            this.Stop_Solve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Stop_Solve.Location = new System.Drawing.Point(18, 126);
+            this.Stop_Solve.Name = "Stop_Solve";
+            this.Stop_Solve.Size = new System.Drawing.Size(205, 32);
+            this.Stop_Solve.TabIndex = 8;
+            this.Stop_Solve.Text = "Stop Solve";
+            this.Stop_Solve.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // About_Project
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(392, 344);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Rod B";
+            this.About_Project.Image = ((System.Drawing.Image)(resources.GetObject("About_Project.Image")));
+            this.About_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_Project.Location = new System.Drawing.Point(18, 166);
+            this.About_Project.Name = "About_Project";
+            this.About_Project.Size = new System.Drawing.Size(205, 32);
+            this.About_Project.TabIndex = 10;
+            this.About_Project.Text = "About Project";
+            this.About_Project.UseVisualStyleBackColor = true;
+            this.About_Project.Click += new System.EventHandler(this.About_Project_Click);
             // 
-            // label5
+            // Exit_Program
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(681, 344);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 19);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Rod C";
-            // 
-            // stepCounter
-            // 
-            this.stepCounter.AutoSize = true;
-            this.stepCounter.Location = new System.Drawing.Point(753, 22);
-            this.stepCounter.Name = "stepCounter";
-            this.stepCounter.Size = new System.Drawing.Size(56, 19);
-            this.stepCounter.TabIndex = 4;
-            this.stepCounter.Text = "Step: 0";
+            this.Exit_Program.Image = ((System.Drawing.Image)(resources.GetObject("Exit_Program.Image")));
+            this.Exit_Program.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Exit_Program.Location = new System.Drawing.Point(18, 204);
+            this.Exit_Program.Name = "Exit_Program";
+            this.Exit_Program.Size = new System.Drawing.Size(205, 32);
+            this.Exit_Program.TabIndex = 10;
+            this.Exit_Program.Text = "Exit";
+            this.Exit_Program.UseVisualStyleBackColor = true;
+            this.Exit_Program.Click += new System.EventHandler(this.Exit_Program_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 619);
+            this.ClientSize = new System.Drawing.Size(867, 655);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Tháp Hà Nội";
+            this.Text = "HaNoi Tower";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).EndInit();
@@ -483,6 +527,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label stepCounter;
+        private System.Windows.Forms.Button Exit_Program;
+        private System.Windows.Forms.Button About_Project;
+        private System.Windows.Forms.Button Stop_Solve;
     }
 }
 

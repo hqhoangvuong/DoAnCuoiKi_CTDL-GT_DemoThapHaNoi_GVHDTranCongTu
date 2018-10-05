@@ -12,4 +12,3 @@ C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.exe.manifest
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.application
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\HaNoiTower.AboutForm.resources
-C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Debug\MOVEMENT_DEMO.csprojAssemblyReference.cache
