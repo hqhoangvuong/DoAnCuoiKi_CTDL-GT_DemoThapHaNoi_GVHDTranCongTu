@@ -21,6 +21,7 @@ namespace HaNoiTower
         const int Disk_Height = 20;
         const int DIS_X_frm_Rod_to_Disk = 11;
         int DelayTime;
+        int movStep;
 
         public Form1()
         {
@@ -30,6 +31,7 @@ namespace HaNoiTower
             disksRodB = new Stack<PictureBox>();
             disksRodC = new Stack<PictureBox>();
             Event_log.Text += Event_log.Text + "Initalized all request compoment\nWaiting for command ...\n";
+            movStep = 0;
         }
 
         public struct ThuTuc
@@ -79,7 +81,7 @@ namespace HaNoiTower
                 o = 'B';
             else
                 o = 'C';
-            Event_log.AppendText(Environment.NewLine + "Move a disk from rod " + i + " to rod " + o);
+            Event_log.AppendText(Environment.NewLine + "Step " + movStep + ": Move a disk from rod " + i + " to rod " + o);
         }
 
         public void Movement(Stack<PictureBox> rodSrc, Stack<PictureBox> rodDes)
@@ -180,6 +182,8 @@ namespace HaNoiTower
                 temp = myStack.Pop();
                 if (temp.N == 1)
                 {
+                    movStep++;
+                    stepCounter.Text = "Step: " + movStep;
                     LogWritter(temp.A, temp.B);
                     Movement(temp.A, temp.B);
                 }
@@ -202,9 +206,9 @@ namespace HaNoiTower
                     myStack.Push(temp1);
                 }
             } while (myStack.Count != 0);
-            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. ");
+            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. Total move: " + movStep + " .");
             timer1.Stop();
-            MessageBox.Show("Task Completed !!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Task Completed after " + movStep + " step!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Start_bnt.Enabled = true;
             Disk_Amount.Enabled = true;
             SimuatorSpeed.Enabled = true;
@@ -218,6 +222,7 @@ namespace HaNoiTower
                 disk.Visible = false;
             time = new TimeSpan(0);
             Time_Counter.Text = "Time: 00:00:00";
+            stepCounter.Text = "Step: 0";
             disksRodA.Clear();
             disksRodB.Clear();
             disksRodC.Clear();

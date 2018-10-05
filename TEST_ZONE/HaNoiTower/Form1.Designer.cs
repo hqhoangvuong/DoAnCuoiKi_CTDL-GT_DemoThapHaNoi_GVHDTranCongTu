@@ -58,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.stepCounter = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -78,6 +79,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.stepCounter);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -406,6 +408,15 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Rod C";
             // 
+            // stepCounter
+            // 
+            this.stepCounter.AutoSize = true;
+            this.stepCounter.Location = new System.Drawing.Point(753, 22);
+            this.stepCounter.Name = "stepCounter";
+            this.stepCounter.Size = new System.Drawing.Size(56, 19);
+            this.stepCounter.TabIndex = 4;
+            this.stepCounter.Text = "Step: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +482,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label stepCounter;
     }
 }
 
