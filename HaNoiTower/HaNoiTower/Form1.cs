@@ -55,6 +55,11 @@ namespace HaNoiTower
 
         }
 
+        private void Time_Counter_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.Add(new TimeSpan(0, 0, 1));
