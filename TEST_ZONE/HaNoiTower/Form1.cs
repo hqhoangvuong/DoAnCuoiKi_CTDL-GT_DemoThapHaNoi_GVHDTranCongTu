@@ -18,11 +18,10 @@ namespace HaNoiTower
         PictureBox[] disks;
         Stack<PictureBox> disksRodA, disksRodB, disksRodC;
         const int Def_Y = 302;
-        const int RodA_X = 29;
-        const int RodB_X = 311;
-        const int RodC_X = 600;
         const int Disk_Height = 20;
         const int DIS_X_frm_Rod_to_Disk = 11;
+        int DelayTime;
+        int movStep;
 
         public Form1()
         {
@@ -31,8 +30,17 @@ namespace HaNoiTower
             disksRodA = new Stack<PictureBox>();
             disksRodB = new Stack<PictureBox>();
             disksRodC = new Stack<PictureBox>();
-
+            Event_log.Text += Event_log.Text + "Initalized all request compoment\nWaiting for command ...\n";
+            movStep = 0;
         }
+
+        public struct ThuTuc
+        {
+            public int N;
+            public Stack<PictureBox> A;
+            public Stack<PictureBox> B;
+            public Stack<PictureBox> C;
+        };
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -47,16 +55,34 @@ namespace HaNoiTower
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.Add(new TimeSpan(0, 0, 1));
-            Time_Counter.Text = string.Format("Thời gian: {0:00}:{1:00}:{2:00}", time.Hours, time.Minutes, time.Seconds);
+            Time_Counter.Text = string.Format("Time: {0:00}:{1:00}:{2:00}", time.Hours, time.Minutes, time.Seconds);
         }
 
-        public struct ThuTuc
+        public void SpeedSelect(ref int delayTime)
         {
-            public int N;
-            public char A;
-            public char B;
-            public char C;
-        };
+            if ((int)SimuatorSpeed.Value == 1)
+                delayTime = 1;
+            else
+                delayTime = (int)SimuatorSpeed.Value * 3;
+        }
+
+        public void LogWritter(Stack<PictureBox> I, Stack<PictureBox> O)
+        {
+            Char i, o;
+            if (I == disksRodA)
+                i = 'A';
+            else if (I == disksRodB)
+                i = 'B';
+            else
+                i = 'C';
+            if (O == disksRodA)
+                o = 'A';
+            else if (O == disksRodB)
+                o = 'B';
+            else
+                o = 'C';
+            Event_log.AppendText(Environment.NewLine + "Step " + movStep + ": Move a disk from rod " + i + " to rod " + o);
+        }
 
         public void Movement(Stack<PictureBox> rodSrc, Stack<PictureBox> rodDes)
         {
@@ -77,7 +103,7 @@ namespace HaNoiTower
                 DiskPop.Location = new Point(x, y);
                 DiskPop.Visible = true;
                 Application.DoEvents();
-                Thread.Sleep(1);
+                Thread.Sleep(DelayTime);
             }
 
             int xPeek = 0, yPeek = 0;
@@ -92,12 +118,12 @@ namespace HaNoiTower
             {
                 yPeek = Def_Y;
                 if (rodDes == disksRodA)
-                    xPeek = RodA_X;
+                    xPeek = RodA.Location.X + DIS_X_frm_Rod_to_Disk;
                 else
                     if (rodDes == disksRodB)
-                    xPeek = RodB_X;
+                    xPeek = RodB.Location.X + DIS_X_frm_Rod_to_Disk;
                 else
-                    xPeek = RodC_X;
+                    xPeek = RodC.Location.X + DIS_X_frm_Rod_to_Disk;
             }
 
             //MessageBox.Show("x=" + x + ", xPeek=" + xPeek);
@@ -108,7 +134,7 @@ namespace HaNoiTower
                     DiskPop.Location = new Point(x, y);
                     DiskPop.Visible = true;
                     Application.DoEvents();
-                    Thread.Sleep(1);
+                    Thread.Sleep(DelayTime);
                 }
             else
                 for (; x >= xPeek; x--)
@@ -117,7 +143,7 @@ namespace HaNoiTower
                     DiskPop.Location = new Point(x, y);
                     DiskPop.Visible = true;
                     Application.DoEvents();
-                    Thread.Sleep(1);
+                    Thread.Sleep(DelayTime);
                 }
 
             // Qua ngang
@@ -132,19 +158,20 @@ namespace HaNoiTower
                 DiskPop.Location = new Point(x, y);
                 DiskPop.Visible = true;
                 Application.DoEvents();
-                Thread.Sleep(1);
+                Thread.Sleep(DelayTime);
             }
             //MessageBox.Show("x=" + DiskPop.Location.X + ", y=" + DiskPop.Location.Y);
             rodDes.Push(DiskPop);
         }
 
-        static void HaNoiTowerByStack()
+        public void HaNoiTowerByStack(int x)
         {
+
             ThuTuc X = new ThuTuc();
-            X.N = int.Parse(Console.ReadLine());
-            X.A = 'A';
-            X.B = 'B';
-            X.C = 'C';
+            X.N = x;
+            X.A = disksRodA;
+            X.B = disksRodB;
+            X.C = disksRodC;
 
             Stack<ThuTuc> myStack = new Stack<ThuTuc>();
             ThuTuc temp = new ThuTuc();
@@ -153,8 +180,13 @@ namespace HaNoiTower
             do
             {
                 temp = myStack.Pop();
-                if (temp.N == 1) ;
-                //Console.WriteLine("{0} {1}", temp.A, temp.B);
+                if (temp.N == 1)
+                {
+                    movStep++;
+                    stepCounter.Text = "Step: " + movStep;
+                    LogWritter(temp.A, temp.B);
+                    Movement(temp.A, temp.B);
+                }
                 else
                 {
                     temp1.N = temp.N - 1;
@@ -174,7 +206,13 @@ namespace HaNoiTower
                     myStack.Push(temp1);
                 }
             } while (myStack.Count != 0);
-            Console.ReadKey();
+            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. Total move: " + movStep + " .");
+            timer1.Stop();
+            MessageBox.Show("Task Completed after " + movStep + " step!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Start_bnt.Enabled = true;
+            Disk_Amount.Enabled = true;
+            SimuatorSpeed.Enabled = true;
+            Event_log.AppendText(Environment.NewLine + "Waiting for new command ...");
         }
 
         public void InitalizeDisk()
@@ -183,7 +221,8 @@ namespace HaNoiTower
             foreach (PictureBox disk in disks)
                 disk.Visible = false;
             time = new TimeSpan(0);
-            Time_Counter.Text = "Thời gian: 00:00:00";
+            Time_Counter.Text = "Time: 00:00:00";
+            stepCounter.Text = "Step: 0";
             disksRodA.Clear();
             disksRodB.Clear();
             disksRodC.Clear();
@@ -200,7 +239,7 @@ namespace HaNoiTower
                     disks[i].Visible = false;
                     disks[i].Visible = true;
                     Application.DoEvents();
-                    Thread.Sleep(1);
+                    Thread.Sleep(DelayTime);
                 }
                 disksRodA.Push(disks[i]);
             }
@@ -217,6 +256,50 @@ namespace HaNoiTower
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Event_log.Clear();
+            MessageBox.Show("Event Log Textbox Cleaned.", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+ 
+
+        private void Export_log_Click(object sender, EventArgs e)
+        {
+            string path;
+            SaveFileDialog save = new SaveFileDialog();
+            saveFileDialog1.Filter = "Text file (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.Title = "Save";
+            saveFileDialog1.ShowDialog();
+            path = (string)saveFileDialog1.FileName;
+            Event_log.SaveFile(path, RichTextBoxStreamType.RichText);
+            MessageBox.Show("Log file saved at " + path + " .", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void About_Project_Click(object sender, EventArgs e)
+        {
+            var ShowFrm = new AboutForm();
+            ShowFrm.Show();
+        }
+
+        private void Exit_Program_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure To Exit Programme ?", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void Event_log_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SimuatorSpeed_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public void Render (int DepX, int depY, int ArrX, int ArrY)
         {
 
@@ -224,14 +307,14 @@ namespace HaNoiTower
 
         private void Start_bnt_Click(object sender, EventArgs e)
         {
+            SpeedSelect(ref DelayTime);
+            Start_bnt.Enabled = false;
+            SimuatorSpeed.Enabled = false;
+            Event_log.AppendText(Environment.NewLine + "Command from User recevied");
+            Event_log.AppendText(Environment.NewLine + "Solve HaNoi Tower with " + (int)Disk_Amount.Value +" disks. Solve speed is "+ DelayTime+". ");
+            Event_log.AppendText(Environment.NewLine + "Initalize the original state of HaNoi Tower ...");
             InitalizeDisk();
-            Movement(disksRodA, disksRodB);
-            Movement(disksRodA, disksRodC);
-            Movement(disksRodB, disksRodC);
-            Movement(disksRodA, disksRodB);
-            Movement(disksRodC, disksRodA);
-            Movement(disksRodC, disksRodB);
-            Movement(disksRodA, disksRodB);
+            HaNoiTowerByStack((int)Disk_Amount.Value);
         }
     }
 }

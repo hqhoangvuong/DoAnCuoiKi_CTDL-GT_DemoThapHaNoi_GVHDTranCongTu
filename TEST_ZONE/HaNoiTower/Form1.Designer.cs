@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.stepCounter = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.picDisk3 = new System.Windows.Forms.PictureBox();
             this.picDisk4 = new System.Windows.Forms.PictureBox();
             this.picDisk5 = new System.Windows.Forms.PictureBox();
@@ -44,13 +49,19 @@
             this.RodA = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Exit_Program = new System.Windows.Forms.Button();
+            this.About_Project = new System.Windows.Forms.Button();
+            this.Stop_Solve = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Export_log = new System.Windows.Forms.Button();
             this.Event_log = new System.Windows.Forms.RichTextBox();
-            this.Clear_log = new System.Windows.Forms.Button();
+            this.Wipe_Log = new System.Windows.Forms.Button();
+            this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.Start_bnt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
-            this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -64,12 +75,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.stepCounter);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.picDisk3);
             this.groupBox1.Controls.Add(this.picDisk4);
             this.groupBox1.Controls.Add(this.picDisk5);
@@ -85,11 +101,48 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(841, 354);
+            this.groupBox1.Size = new System.Drawing.Size(841, 377);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Graphics Zone";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // stepCounter
+            // 
+            this.stepCounter.AutoSize = true;
+            this.stepCounter.ForeColor = System.Drawing.SystemColors.Info;
+            this.stepCounter.Location = new System.Drawing.Point(753, 22);
+            this.stepCounter.Name = "stepCounter";
+            this.stepCounter.Size = new System.Drawing.Size(56, 19);
+            this.stepCounter.TabIndex = 4;
+            this.stepCounter.Text = "Step: 0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(681, 344);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 19);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Rod C";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(392, 344);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Rod B";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(111, 344);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Rod A";
             // 
             // picDisk3
             // 
@@ -130,11 +183,12 @@
             // Time_Counter
             // 
             this.Time_Counter.AutoSize = true;
-            this.Time_Counter.Location = new System.Drawing.Point(14, 42);
+            this.Time_Counter.ForeColor = System.Drawing.SystemColors.Info;
+            this.Time_Counter.Location = new System.Drawing.Point(6, 22);
             this.Time_Counter.Name = "Time_Counter";
-            this.Time_Counter.Size = new System.Drawing.Size(139, 19);
+            this.Time_Counter.Size = new System.Drawing.Size(110, 19);
             this.Time_Counter.TabIndex = 2;
-            this.Time_Counter.Text = "Thời gian: 00:00:00";
+            this.Time_Counter.Text = "Time: 00:00:00";
             // 
             // picDisk6
             // 
@@ -233,56 +287,146 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Exit_Program);
+            this.groupBox2.Controls.Add(this.About_Project);
+            this.groupBox2.Controls.Add(this.Stop_Solve);
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.SimuatorSpeed);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Event_log);
-            this.groupBox2.Controls.Add(this.Clear_log);
             this.groupBox2.Controls.Add(this.Start_bnt);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.Disk_Amount);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 382);
+            this.groupBox2.Location = new System.Drawing.Point(12, 395);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(841, 191);
+            this.groupBox2.Size = new System.Drawing.Size(843, 248);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
+            // 
+            // Exit_Program
+            // 
+            this.Exit_Program.Image = ((System.Drawing.Image)(resources.GetObject("Exit_Program.Image")));
+            this.Exit_Program.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Exit_Program.Location = new System.Drawing.Point(18, 204);
+            this.Exit_Program.Name = "Exit_Program";
+            this.Exit_Program.Size = new System.Drawing.Size(205, 32);
+            this.Exit_Program.TabIndex = 10;
+            this.Exit_Program.Text = "Exit";
+            this.Exit_Program.UseVisualStyleBackColor = true;
+            this.Exit_Program.Click += new System.EventHandler(this.Exit_Program_Click);
+            // 
+            // About_Project
+            // 
+            this.About_Project.Image = ((System.Drawing.Image)(resources.GetObject("About_Project.Image")));
+            this.About_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_Project.Location = new System.Drawing.Point(18, 166);
+            this.About_Project.Name = "About_Project";
+            this.About_Project.Size = new System.Drawing.Size(205, 32);
+            this.About_Project.TabIndex = 10;
+            this.About_Project.Text = "About Project";
+            this.About_Project.UseVisualStyleBackColor = true;
+            this.About_Project.Click += new System.EventHandler(this.About_Project_Click);
+            // 
+            // Stop_Solve
+            // 
+            this.Stop_Solve.Image = ((System.Drawing.Image)(resources.GetObject("Stop_Solve.Image")));
+            this.Stop_Solve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Stop_Solve.Location = new System.Drawing.Point(18, 126);
+            this.Stop_Solve.Name = "Stop_Solve";
+            this.Stop_Solve.Size = new System.Drawing.Size(205, 32);
+            this.Stop_Solve.TabIndex = 8;
+            this.Stop_Solve.Text = "Stop Solve";
+            this.Stop_Solve.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Export_log);
+            this.groupBox3.Controls.Add(this.Event_log);
+            this.groupBox3.Controls.Add(this.Wipe_Log);
+            this.groupBox3.Location = new System.Drawing.Point(251, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(584, 226);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Log";
+            // 
+            // Export_log
+            // 
+            this.Export_log.Image = ((System.Drawing.Image)(resources.GetObject("Export_log.Image")));
+            this.Export_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Export_log.Location = new System.Drawing.Point(338, 185);
+            this.Export_log.Name = "Export_log";
+            this.Export_log.Size = new System.Drawing.Size(205, 32);
+            this.Export_log.TabIndex = 9;
+            this.Export_log.Text = "Export Log To File";
+            this.Export_log.UseVisualStyleBackColor = true;
+            this.Export_log.Click += new System.EventHandler(this.Export_log_Click);
+            // 
+            // Event_log
+            // 
+            this.Event_log.Location = new System.Drawing.Point(6, 25);
+            this.Event_log.Name = "Event_log";
+            this.Event_log.ReadOnly = true;
+            this.Event_log.Size = new System.Drawing.Size(572, 154);
+            this.Event_log.TabIndex = 4;
+            this.Event_log.Text = "";
+            this.Event_log.TextChanged += new System.EventHandler(this.Event_log_TextChanged);
+            // 
+            // Wipe_Log
+            // 
+            this.Wipe_Log.Image = ((System.Drawing.Image)(resources.GetObject("Wipe_Log.Image")));
+            this.Wipe_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Wipe_Log.Location = new System.Drawing.Point(45, 185);
+            this.Wipe_Log.Name = "Wipe_Log";
+            this.Wipe_Log.Size = new System.Drawing.Size(205, 32);
+            this.Wipe_Log.TabIndex = 8;
+            this.Wipe_Log.Text = "Delete Log Textbox";
+            this.Wipe_Log.UseVisualStyleBackColor = true;
+            this.Wipe_Log.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // SimuatorSpeed
+            // 
+            this.SimuatorSpeed.Location = new System.Drawing.Point(185, 56);
+            this.SimuatorSpeed.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.SimuatorSpeed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SimuatorSpeed.Name = "SimuatorSpeed";
+            this.SimuatorSpeed.Size = new System.Drawing.Size(38, 26);
+            this.SimuatorSpeed.TabIndex = 6;
+            this.SimuatorSpeed.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.SimuatorSpeed.ValueChanged += new System.EventHandler(this.SimuatorSpeed_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 19);
+            this.label2.Size = new System.Drawing.Size(91, 19);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tốc độ mô phỏng";
+            this.label2.Text = "Solve Speed";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // Event_log
-            // 
-            this.Event_log.Location = new System.Drawing.Point(358, 27);
-            this.Event_log.Name = "Event_log";
-            this.Event_log.Size = new System.Drawing.Size(467, 154);
-            this.Event_log.TabIndex = 4;
-            this.Event_log.Text = "";
-            // 
-            // Clear_log
-            // 
-            this.Clear_log.Location = new System.Drawing.Point(18, 125);
-            this.Clear_log.Name = "Clear_log";
-            this.Clear_log.Size = new System.Drawing.Size(173, 31);
-            this.Clear_log.TabIndex = 3;
-            this.Clear_log.Text = "Xóa Log";
-            this.Clear_log.UseVisualStyleBackColor = true;
-            this.Clear_log.Click += new System.EventHandler(this.Start_bnt_Click);
             // 
             // Start_bnt
             // 
+            this.Start_bnt.Image = ((System.Drawing.Image)(resources.GetObject("Start_bnt.Image")));
+            this.Start_bnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Start_bnt.Location = new System.Drawing.Point(18, 88);
             this.Start_bnt.Name = "Start_bnt";
-            this.Start_bnt.Size = new System.Drawing.Size(173, 31);
+            this.Start_bnt.Size = new System.Drawing.Size(205, 32);
             this.Start_bnt.TabIndex = 3;
-            this.Start_bnt.Text = "Bắt đầu Demo";
+            this.Start_bnt.Text = "Start Solve";
             this.Start_bnt.UseVisualStyleBackColor = true;
             this.Start_bnt.Click += new System.EventHandler(this.Start_bnt_Click);
             // 
@@ -291,13 +435,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 19);
+            this.label1.Size = new System.Drawing.Size(123, 19);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Chọn số đĩa";
+            this.label1.Text = "Number of Disks";
             // 
             // Disk_Amount
             // 
-            this.Disk_Amount.Location = new System.Drawing.Point(153, 25);
+            this.Disk_Amount.Location = new System.Drawing.Point(185, 25);
             this.Disk_Amount.Maximum = new decimal(new int[] {
             8,
             0,
@@ -318,26 +462,20 @@
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
             // 
-            // SimuatorSpeed
-            // 
-            this.SimuatorSpeed.Location = new System.Drawing.Point(153, 56);
-            this.SimuatorSpeed.Name = "SimuatorSpeed";
-            this.SimuatorSpeed.Size = new System.Drawing.Size(38, 26);
-            this.SimuatorSpeed.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 585);
+            this.ClientSize = new System.Drawing.Size(866, 655);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Tháp Hà Nội";
+            this.Text = "HaNoi Tower";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).EndInit();
@@ -353,8 +491,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.RodA)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SimuatorSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disk_Amount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,9 +519,19 @@
         private System.Windows.Forms.NumericUpDown Disk_Amount;
         private System.Windows.Forms.RichTextBox Event_log;
         private System.Windows.Forms.Button Start_bnt;
-        private System.Windows.Forms.Button Clear_log;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown SimuatorSpeed;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Wipe_Log;
+        private System.Windows.Forms.Button Export_log;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label stepCounter;
+        private System.Windows.Forms.Button Exit_Program;
+        private System.Windows.Forms.Button About_Project;
+        private System.Windows.Forms.Button Stop_Solve;
     }
 }
 
