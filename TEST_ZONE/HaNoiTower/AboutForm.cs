@@ -16,5 +16,10 @@ namespace HaNoiTower
         {
             InitializeComponent();
         }
+
+        private void About_OK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

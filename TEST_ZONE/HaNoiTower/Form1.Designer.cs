@@ -49,19 +49,19 @@
             this.RodA = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Export_log = new System.Windows.Forms.Button();
-            this.Wipe_Log = new System.Windows.Forms.Button();
+            this.Exit_Program = new System.Windows.Forms.Button();
+            this.About_Project = new System.Windows.Forms.Button();
+            this.Stop_Solve = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Export_log = new System.Windows.Forms.Button();
             this.Event_log = new System.Windows.Forms.RichTextBox();
+            this.Wipe_Log = new System.Windows.Forms.Button();
             this.SimuatorSpeed = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.Start_bnt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Disk_Amount = new System.Windows.Forms.NumericUpDown();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.Stop_Solve = new System.Windows.Forms.Button();
-            this.About_Project = new System.Windows.Forms.Button();
-            this.Exit_Program = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDisk4)).BeginInit();
@@ -304,29 +304,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Zone";
             // 
-            // Export_log
+            // Exit_Program
             // 
-            this.Export_log.Image = ((System.Drawing.Image)(resources.GetObject("Export_log.Image")));
-            this.Export_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Export_log.Location = new System.Drawing.Point(338, 185);
-            this.Export_log.Name = "Export_log";
-            this.Export_log.Size = new System.Drawing.Size(205, 32);
-            this.Export_log.TabIndex = 9;
-            this.Export_log.Text = "Export Log To File";
-            this.Export_log.UseVisualStyleBackColor = true;
-            this.Export_log.Click += new System.EventHandler(this.Export_log_Click);
+            this.Exit_Program.Image = ((System.Drawing.Image)(resources.GetObject("Exit_Program.Image")));
+            this.Exit_Program.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Exit_Program.Location = new System.Drawing.Point(18, 204);
+            this.Exit_Program.Name = "Exit_Program";
+            this.Exit_Program.Size = new System.Drawing.Size(205, 32);
+            this.Exit_Program.TabIndex = 10;
+            this.Exit_Program.Text = "Exit";
+            this.Exit_Program.UseVisualStyleBackColor = true;
+            this.Exit_Program.Click += new System.EventHandler(this.Exit_Program_Click);
             // 
-            // Wipe_Log
+            // About_Project
             // 
-            this.Wipe_Log.Image = ((System.Drawing.Image)(resources.GetObject("Wipe_Log.Image")));
-            this.Wipe_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Wipe_Log.Location = new System.Drawing.Point(45, 185);
-            this.Wipe_Log.Name = "Wipe_Log";
-            this.Wipe_Log.Size = new System.Drawing.Size(205, 32);
-            this.Wipe_Log.TabIndex = 8;
-            this.Wipe_Log.Text = "Delete Log Textbox";
-            this.Wipe_Log.UseVisualStyleBackColor = true;
-            this.Wipe_Log.Click += new System.EventHandler(this.button1_Click);
+            this.About_Project.Image = ((System.Drawing.Image)(resources.GetObject("About_Project.Image")));
+            this.About_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_Project.Location = new System.Drawing.Point(18, 166);
+            this.About_Project.Name = "About_Project";
+            this.About_Project.Size = new System.Drawing.Size(205, 32);
+            this.About_Project.TabIndex = 10;
+            this.About_Project.Text = "About Project";
+            this.About_Project.UseVisualStyleBackColor = true;
+            this.About_Project.Click += new System.EventHandler(this.About_Project_Click);
+            // 
+            // Stop_Solve
+            // 
+            this.Stop_Solve.Image = ((System.Drawing.Image)(resources.GetObject("Stop_Solve.Image")));
+            this.Stop_Solve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Stop_Solve.Location = new System.Drawing.Point(18, 126);
+            this.Stop_Solve.Name = "Stop_Solve";
+            this.Stop_Solve.Size = new System.Drawing.Size(205, 32);
+            this.Stop_Solve.TabIndex = 8;
+            this.Stop_Solve.Text = "Stop Solve";
+            this.Stop_Solve.UseVisualStyleBackColor = true;
+            this.Stop_Solve.Click += new System.EventHandler(this.Stop_Solve_Click);
             // 
             // groupBox3
             // 
@@ -340,6 +352,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Log";
             // 
+            // Export_log
+            // 
+            this.Export_log.Image = ((System.Drawing.Image)(resources.GetObject("Export_log.Image")));
+            this.Export_log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Export_log.Location = new System.Drawing.Point(338, 185);
+            this.Export_log.Name = "Export_log";
+            this.Export_log.Size = new System.Drawing.Size(205, 32);
+            this.Export_log.TabIndex = 9;
+            this.Export_log.Text = "Export Log To File";
+            this.Export_log.UseVisualStyleBackColor = true;
+            this.Export_log.Click += new System.EventHandler(this.Export_log_Click);
+            // 
             // Event_log
             // 
             this.Event_log.Location = new System.Drawing.Point(6, 25);
@@ -348,6 +372,18 @@
             this.Event_log.Size = new System.Drawing.Size(572, 154);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
+            // 
+            // Wipe_Log
+            // 
+            this.Wipe_Log.Image = ((System.Drawing.Image)(resources.GetObject("Wipe_Log.Image")));
+            this.Wipe_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Wipe_Log.Location = new System.Drawing.Point(45, 185);
+            this.Wipe_Log.Name = "Wipe_Log";
+            this.Wipe_Log.Size = new System.Drawing.Size(205, 32);
+            this.Wipe_Log.TabIndex = 8;
+            this.Wipe_Log.Text = "Delete Log Textbox";
+            this.Wipe_Log.UseVisualStyleBackColor = true;
+            this.Wipe_Log.Click += new System.EventHandler(this.button1_Click);
             // 
             // SimuatorSpeed
             // 
@@ -424,41 +460,6 @@
             0,
             0});
             this.Disk_Amount.ValueChanged += new System.EventHandler(this.Disk_Amount_ValueChanged);
-            // 
-            // Stop_Solve
-            // 
-            this.Stop_Solve.Image = ((System.Drawing.Image)(resources.GetObject("Stop_Solve.Image")));
-            this.Stop_Solve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Stop_Solve.Location = new System.Drawing.Point(18, 126);
-            this.Stop_Solve.Name = "Stop_Solve";
-            this.Stop_Solve.Size = new System.Drawing.Size(205, 32);
-            this.Stop_Solve.TabIndex = 8;
-            this.Stop_Solve.Text = "Stop Solve";
-            this.Stop_Solve.UseVisualStyleBackColor = true;
-            // 
-            // About_Project
-            // 
-            this.About_Project.Image = ((System.Drawing.Image)(resources.GetObject("About_Project.Image")));
-            this.About_Project.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.About_Project.Location = new System.Drawing.Point(18, 166);
-            this.About_Project.Name = "About_Project";
-            this.About_Project.Size = new System.Drawing.Size(205, 32);
-            this.About_Project.TabIndex = 10;
-            this.About_Project.Text = "About Project";
-            this.About_Project.UseVisualStyleBackColor = true;
-            this.About_Project.Click += new System.EventHandler(this.About_Project_Click);
-            // 
-            // Exit_Program
-            // 
-            this.Exit_Program.Image = ((System.Drawing.Image)(resources.GetObject("Exit_Program.Image")));
-            this.Exit_Program.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Exit_Program.Location = new System.Drawing.Point(18, 204);
-            this.Exit_Program.Name = "Exit_Program";
-            this.Exit_Program.Size = new System.Drawing.Size(205, 32);
-            this.Exit_Program.TabIndex = 10;
-            this.Exit_Program.Text = "Exit";
-            this.Exit_Program.UseVisualStyleBackColor = true;
-            this.Exit_Program.Click += new System.EventHandler(this.Exit_Program_Click);
             // 
             // Form1
             // 

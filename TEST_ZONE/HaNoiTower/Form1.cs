@@ -30,7 +30,7 @@ namespace HaNoiTower
             disksRodA = new Stack<PictureBox>();
             disksRodB = new Stack<PictureBox>();
             disksRodC = new Stack<PictureBox>();
-            Event_log.Text += Event_log.Text + "Initalized all request compoment\nWaiting for command ...\n";
+            Event_log.Text += Event_log.Text + "Initalized all request compoment.\nWaiting for command ...\n";
             movStep = 0;
         }
 
@@ -208,7 +208,7 @@ namespace HaNoiTower
             } while (myStack.Count != 0);
             Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. Total move: " + movStep + " .");
             timer1.Stop();
-            MessageBox.Show("Task Completed after " + movStep + " step!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Task Completed after " + movStep + " steps!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Start_bnt.Enabled = true;
             Disk_Amount.Enabled = true;
             SimuatorSpeed.Enabled = true;
@@ -288,6 +288,11 @@ namespace HaNoiTower
             {
                 Application.Exit();
             }
+        }
+
+        private void Stop_Solve_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void Render (int DepX, int depY, int ArrX, int ArrY)
