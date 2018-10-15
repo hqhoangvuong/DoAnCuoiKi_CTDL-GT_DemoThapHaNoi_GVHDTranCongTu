@@ -338,7 +338,10 @@
             this.Stop_Solve.TabIndex = 8;
             this.Stop_Solve.Text = "Stop Solve";
             this.Stop_Solve.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.Stop_Solve.Click += new System.EventHandler(this.Stop_Solve_Click);
+=======
+>>>>>>> 4f21bd57c947bcf04e12c9e710a400327535e2c3
             // 
             // groupBox3
             // 
@@ -372,6 +375,19 @@
             this.Event_log.Size = new System.Drawing.Size(572, 154);
             this.Event_log.TabIndex = 4;
             this.Event_log.Text = "";
+            this.Event_log.TextChanged += new System.EventHandler(this.Event_log_TextChanged);
+            // 
+            // Wipe_Log
+            // 
+            this.Wipe_Log.Image = ((System.Drawing.Image)(resources.GetObject("Wipe_Log.Image")));
+            this.Wipe_Log.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Wipe_Log.Location = new System.Drawing.Point(45, 185);
+            this.Wipe_Log.Name = "Wipe_Log";
+            this.Wipe_Log.Size = new System.Drawing.Size(205, 32);
+            this.Wipe_Log.TabIndex = 8;
+            this.Wipe_Log.Text = "Delete Log Textbox";
+            this.Wipe_Log.UseVisualStyleBackColor = true;
+            this.Wipe_Log.Click += new System.EventHandler(this.button1_Click);
             // 
             // Wipe_Log
             // 
@@ -406,6 +422,7 @@
             0,
             0,
             0});
+            this.SimuatorSpeed.ValueChanged += new System.EventHandler(this.SimuatorSpeed_ValueChanged);
             // 
             // label2
             // 
@@ -466,7 +483,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 655);
+            this.ClientSize = new System.Drawing.Size(866, 655);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;

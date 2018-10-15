@@ -290,7 +290,16 @@ namespace HaNoiTower
             }
         }
 
+<<<<<<< HEAD
         private void Stop_Solve_Click(object sender, EventArgs e)
+=======
+        private void Event_log_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SimuatorSpeed_ValueChanged(object sender, EventArgs e)
+>>>>>>> 4f21bd57c947bcf04e12c9e710a400327535e2c3
         {
 
         }
