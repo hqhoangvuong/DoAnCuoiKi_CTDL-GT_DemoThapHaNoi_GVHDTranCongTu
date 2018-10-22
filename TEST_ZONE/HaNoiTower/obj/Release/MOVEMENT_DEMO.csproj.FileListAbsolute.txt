@@ -12,3 +12,18 @@ C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.application
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.exe
 C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.pdb
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Release\HaNoiTower.exe.config
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Release\HaNoiTower.exe.manifest
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Release\HaNoiTower.application
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Release\HaNoiTower.exe
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\bin\Release\HaNoiTower.pdb
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\MOVEMENT_DEMO.csprojAssemblyReference.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.AboutForm.resources
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.Form1.resources
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.Properties.Resources.resources
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\MOVEMENT_DEMO.csproj.GenerateResource.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\MOVEMENT_DEMO.csproj.CoreCompileInputs.cache
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.exe.manifest
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.application
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.exe
+C:\Users\Gia Nhung\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\HaNoiTower\obj\Release\HaNoiTower.pdb
