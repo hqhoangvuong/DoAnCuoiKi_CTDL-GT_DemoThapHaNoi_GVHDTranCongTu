@@ -25,6 +25,7 @@ namespace HaNoiTower
 
         public Form1()
         {
+
             InitializeComponent();
             disks = new PictureBox[] { picDisk1, picDisk2, picDisk3, picDisk4, picDisk5, picDisk6, picDisk7, picDisk8 };
             disksRodA = new Stack<PictureBox>();
@@ -164,14 +165,14 @@ namespace HaNoiTower
             rodDes.Push(DiskPop);
         }
 
-        public void HaNoiTowerByStack(int x)
+        public void HNTByStack(int x)
         {
 
             ThuTuc X = new ThuTuc();
             X.N = x;
             X.A = disksRodA;
-            X.B = disksRodB;
-            X.C = disksRodC;
+            X.C = disksRodB;
+            X.B = disksRodC;
 
             Stack<ThuTuc> myStack = new Stack<ThuTuc>();
             ThuTuc temp = new ThuTuc();
@@ -292,7 +293,7 @@ namespace HaNoiTower
 
         private void Stop_Solve_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public void Render (int DepX, int depY, int ArrX, int ArrY)
@@ -309,7 +310,9 @@ namespace HaNoiTower
             Event_log.AppendText(Environment.NewLine + "Solve HaNoi Tower with " + (int)Disk_Amount.Value +" disks. Solve speed is "+ DelayTime+". ");
             Event_log.AppendText(Environment.NewLine + "Initalize the original state of HaNoi Tower ...");
             InitalizeDisk();
-            HaNoiTowerByStack((int)Disk_Amount.Value);
+            //Thread t = new Thread(() => HNTByStack((int)Disk_Amount.Value));
+            //t.Start();
+            HNTByStack((int)Disk_Amount.Value);
         }
     }
 }
