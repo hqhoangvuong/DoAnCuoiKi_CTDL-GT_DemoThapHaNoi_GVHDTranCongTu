@@ -207,7 +207,7 @@ namespace HaNoiTower
                     myStack.Push(temp1);
                 }
             } while (myStack.Count != 0);
-            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds, " + time.Milliseconds + " Miliseconds. Total move: " + movStep + " .");
+            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds. Total move: " + movStep + " .");
             timer1.Stop();
             MessageBox.Show("Task Completed after " + movStep + " steps!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Start_bnt.Enabled = true;
@@ -294,6 +294,11 @@ namespace HaNoiTower
         private void Stop_Solve_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Time_Counter_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void Render (int DepX, int depY, int ArrX, int ArrY)

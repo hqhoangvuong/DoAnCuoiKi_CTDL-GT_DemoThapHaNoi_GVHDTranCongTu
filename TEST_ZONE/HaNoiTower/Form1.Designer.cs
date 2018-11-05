@@ -189,6 +189,7 @@
             this.Time_Counter.Size = new System.Drawing.Size(110, 19);
             this.Time_Counter.TabIndex = 2;
             this.Time_Counter.Text = "Time: 00:00:00";
+            this.Time_Counter.Click += new System.EventHandler(this.Time_Counter_Click);
             // 
             // picDisk6
             // 
@@ -283,6 +284,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // groupBox2
