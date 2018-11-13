@@ -207,7 +207,7 @@ namespace HaNoiTower
                     myStack.Push(temp1);
                 }
             } while (myStack.Count != 0);
-            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " Hours, " + time.Minutes + " Minutes, " + time.Seconds + " Seconds. Total move: " + movStep + " .");
+            Event_log.AppendText(Environment.NewLine + "Task completed in " + time.Hours + " minute(s), " + time.Minutes + " second(s), " + time.Seconds + " minisecond(s). Total move: " + movStep + " .");
             timer1.Stop();
             MessageBox.Show("Task Completed after " + movStep + " steps!!!", "Program's Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Start_bnt.Enabled = true;
