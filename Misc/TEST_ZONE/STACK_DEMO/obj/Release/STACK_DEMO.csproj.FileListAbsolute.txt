@@ -1,0 +1,6 @@
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\bin\Release\STACK_DEMO.exe.config
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\bin\Release\STACK_DEMO.exe
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\bin\Release\STACK_DEMO.pdb
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Release\STACK_DEMO.csproj.CoreCompileInputs.cache
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Release\STACK_DEMO.exe
+C:\Users\Hikari\Documents\GitHub\DoAnCuoiKi_CTDL-GT_DemoThapHaNoi_GVHDTranCongTu\TEST_ZONE\STACK_DEMO\obj\Release\STACK_DEMO.pdb
