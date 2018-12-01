@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HaNoiTower.exe" size="339432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HaNoiTower.exe" size="123368">
       <assemblyIdentity name="HaNoiTower" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+6Z3lbAfOUX/shcfxjX5Nyfrzve3+ghNVYDafNtGTeA=</dsig:DigestValue>
+        <dsig:DigestValue>kdG/cZyTvte0ZiZP1HmzNl+npp1GQrR0mpAT6PsaUoE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

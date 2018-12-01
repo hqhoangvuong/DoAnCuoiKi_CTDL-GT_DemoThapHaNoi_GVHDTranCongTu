@@ -49,7 +49,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD:TEST_ZONE/HaNoiTower/bin/Release/HaNoiTower.exe.manifest
+        <dsig:DigestValue>kdG/cZyTvte0ZiZP1HmzNl+npp1GQrR0mpAT6PsaUoE=</dsig:DigestValue>
+=======
         <dsig:DigestValue>CI0fl2jwgv7dO7yyhNJlEGBD0fwAXRXU4YWu17Ru77o=</dsig:DigestValue>
+>>>>>>> 6d1ce29edc745d57907def7d4bfa6de180121aa1:HaNoiTower/HaNoiTower/bin/Debug/HaNoiTower.exe.manifest
       </hash>
     </dependentAssembly>
   </dependency>
